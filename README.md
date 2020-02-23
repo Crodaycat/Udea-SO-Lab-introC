@@ -12,23 +12,25 @@ Inicialmente antes de empezar este laboratorio haga un **fork**. Luego descargue
 
 **P1**. El propietario de Harry’s Car Sales paga a cada vendedor una comisión basada en sus ventas trimestrales. Los rangos de ventas y las correspondientes tasas son mostrades en la tabla que aparece a continuación:
 
-| Ventas trimestrales ($) | Comisión |
-|---|---|
-| 0 - 20000 |  Multiplicar las ventas por 5% |
-|  20001-50000 | Multiplicar la ventas sobre 20000 por 7% y entonces agregue 1000 al resultado |
-|  50001 o mas | Multiplicar la ventas sobre 50000 por 10% y entonces agregue 3100 al resultado  | 
+| Ventas trimestrales (\$) | Comisión                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------ |
+| 0 - 20000                | Multiplicar las ventas por 5%                                                  |
+| 20001-50000              | Multiplicar la ventas sobre 20000 por 7% y entonces agregue 1000 al resultado  |
+| 50001 o mas              | Multiplicar la ventas sobre 50000 por 10% y entonces agregue 3100 al resultado |
 
 Teniendo en cuenta lo anterior lleve a cabo las siguientes tareas:
-* Comprenda el problema y realice casos de obteniendo las comisiones para los siguientes valores de ventas: 20000, 20001, 30000, 50000, 50001, 75000, y –3.
-* Codifique el algoritmo en C de modo que permita el calculo de las comisiones. Lleve a cabo las pruebas con los casos de test elegidos en el item anterior.
 
-**P1**. Escriba un programa en C para desplegar la tabla de multiplicación desde 1 hasta N.
+- Comprenda el problema y realice casos de obteniendo las comisiones para los siguientes valores de ventas: 20000, 20001, 30000, 50000, 50001, 75000, y –3.
+- Codifique el algoritmo en C de modo que permita el calculo de las comisiones. Lleve a cabo las pruebas con los casos de test elegidos en el item anterior.
+
+**P2**. Escriba un programa en C para desplegar la tabla de multiplicación desde 1 hasta N.
 
 Test de entrada:
 
 ```
 Numero final (empezando de 1): 8
 ```
+
 Salida esperada:
 
 ```
@@ -39,7 +41,7 @@ Tabla de multiplicación desde 1 hasta 8:
 1x10 = 10, 2x10 = 20, 3x10 = 30, 4x10 = 40, 5x10 = 50, 6x10 = 60, 7x10 = 70, 8x10 = 80
 ```
 
-**P2**. Escriba un programa en C para imprimir la siguiente secuencia (dado el numero de renglones):
+**P3**. Escriba un programa en C para imprimir la siguiente secuencia (dado el numero de renglones):
 
 ```
 1
@@ -49,21 +51,22 @@ Tabla de multiplicación desde 1 hasta 8:
 10101
 ```
 
-**P3**. Escriba una función llamada múltiplo que tome dos enteros y determine si el segundo es múltiplo del primero. La función deberá tomar dos argumentos enteros y devolver 1 si el segundo es un múltiplo del primero y 0 si no. Luego, utilice esta función en un programa que acepte como entrada una serie de pares de enteros.
+**P4**. Escriba una función llamada múltiplo que tome dos enteros y determine si el segundo es múltiplo del primero. La función deberá tomar dos argumentos enteros y devolver 1 si el segundo es un múltiplo del primero y 0 si no. Luego, utilice esta función en un programa que acepte como entrada una serie de pares de enteros.
 
-**P4**. Escribir un programa que lea dos números **x** y **n** y en una función, calcule la suma de la progresión geométrica: 
+**P5**. Escribir un programa que lea dos números **x** y **n** y en una función, calcule la suma de la progresión geométrica:
 
 ```
 1 + x + x^2 + x^3 + x^4 + ⋯ + x^n
 ```
 
-**P5**. Escriba un programa en C para encontrar la suma de las series: 
+**P6**. Escriba un programa en C para encontrar la suma de las series:
 
 ```
 1 - x^2/2! + x^4/4! - ...
 ```
 
 Test data:
+
 ```
 Valor de entrada de x: 2
 Numero de terminos: 5
@@ -75,8 +78,7 @@ Salida esperada:
 suma: -0.415873
 ```
 
-**P6**. Escriba una función que tome un valor entero y devuelva el número con sus dígitos en reversa. Por ejemplo, dado el numero 7631, la función deberá devolver 1367.
-
+**P7**. Escriba una función que tome un valor entero y devuelva el número con sus dígitos en reversa. Por ejemplo, dado el numero 7631, la función deberá devolver 1367.
 
 ### Parte 2
 
@@ -102,7 +104,7 @@ int main (void) {
     int num_pares, min, max;
     printf("Digite los dos limites (minimo maximo): ");
     scanf("%d %d", &min, &max);
-    
+
     num_pares = generar_aleatorios(min, max, 10);
     putchar('\n');
     printf("La cantidad de numeros pares generados es de: %d\n", num_pares);
@@ -128,7 +130,7 @@ int menor(int num1, int num2) {
 }
 
 int generar_aleatorios(int num1, int num2, int num_aleatorios) {
-    int cnt = 0, num, M, m;    
+    int cnt = 0, num, M, m;
     M = mayor(num1, num2);
     m = menor(num1, num2);
     for(int i = 0; i < num_aleatorios; i++) {
@@ -137,7 +139,7 @@ int generar_aleatorios(int num1, int num2, int num_aleatorios) {
             cnt++;
         }
         printf("%d ", num);
-    }    
+    }
     return cnt;
 }
 ```
@@ -146,11 +148,11 @@ int generar_aleatorios(int num1, int num2, int num_aleatorios) {
 
 La siguiente tabla muestra los ejemplos de algunos casos de entrada y salida:
 
-|Número de lanzamientos | Salida |
-|---|--|
-|5 |CCSSS, #de caras = 2, # de sellos = 3|
-|8 |SCCSCSCC, #de caras = 5, # de sellos = 3|
-|5 |SCSCC, # de caras = 3, # de sellos = 2|
+| Número de lanzamientos | Salida                                   |
+| ---------------------- | ---------------------------------------- |
+| 5                      | CCSSS, #de caras = 2, # de sellos = 3    |
+| 8                      | SCCSCSCC, #de caras = 5, # de sellos = 3 |
+| 5                      | SCSCC, # de caras = 3, # de sellos = 2   |
 
 **Solución**:
 
@@ -175,7 +177,7 @@ int main (void) {
     for (int i = 0; i < lanzamientos; i++) {
         lado = generar_aleatorios(0,1);
         if (lado == 1) {
-            num_sellos++;            
+            num_sellos++;
         }
         else {
             num_caras++;
@@ -206,9 +208,9 @@ int menor(int num1, int num2) {
 
 int generar_aleatorios(int num1, int num2) {
     int num, M, m;
-    
+
     M = mayor(num1, num2);
-    m = menor(num1, num2);    
+    m = menor(num1, num2);
     num = rand()%(M - m + 1) + m;
     return num;
 }
@@ -256,4 +258,3 @@ No. Trata de nuevo
 **Nota**: Mediante el generador de números aleatorios, seleccione un número entre 1 y 4 para desplegar un mensaje diferente para cada respuesta. Presente la respuesta mediante una estructura switch.
 
 **P9**. Los sistemas más avanzados de CAI vigilan el rendimiento del alumno a lo largo de un periodo de tiempo. La decisión para empezar un tema nuevo se basa a menudo en el éxito del alumno en relación con temas anteriores. Modifique el programa del ejercicio anterior para contar el número de respuestas correctas e incorrectas del estudiante. Una vez el estudiante decida terminar la ejecución del programa, el programa debe calcular y mostrar el porcentaje de respuestas correctas respecto al total de preguntas que le hizo el programa. Si el porcentaje es menor a 75%, el programa deberá imprimir el mensaje **"Por favor pídele ayuda al instructor" y termina**.
-
